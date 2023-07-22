@@ -1,0 +1,1 @@
+export { ChatModuleRouter } from './router/ChatModuleRouter'
