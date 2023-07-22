@@ -1,0 +1,36 @@
+.button {
+    @apply inline-flex justify-center items-center gap-[9px] flex-shrink-0 rounded-md transition-all duration-300;
+    padding: 0px 20px;
+}
+
+.button-active {
+    @apply !bg-white !text-[#F97316];
+}
+
+.button-active > svg path {
+    @apply stroke-[#F97316];
+}
+
+.button-color-primary {
+    @apply bg-[#F97316] text-white hover:bg-orange-600;
+}
+
+.button-color-secondary {
+    @apply bg-white text-black hover:bg-slate-100;
+}
+
+.button-color-outline-primary {
+    @apply bg-transparent border-[1.5px] border-[#F97316] text-[#F97316] hover:border-orange-600 hover:text-orange-600; 
+}
+
+.button-color-outline-secondary {
+    @apply bg-transparent border-[1.5px] border-white text-white hover:border-slate-100 hover:text-slate-100; 
+}
+
+.button-size-normal {
+    @apply text-[14px] h-[39px];
+}
+
+.button-size-large {
+    @apply text-[16px] h-[45px];
+}
