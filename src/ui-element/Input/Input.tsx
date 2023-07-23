@@ -18,7 +18,8 @@ const Input = ({
     onActionButton,
     ...restOfProps
 }: InputProps) => {
-    const classes = classNames('input', className);
+    const classesContainer = classNames('relative', className);
+    const classes = classNames('input');
 
     const refInput = useRef<HTMLInputElement>(null);
 
@@ -37,7 +38,7 @@ const Input = ({
     }, [onActionButton]);
 
     return (
-        <div className='relative'>
+        <div className={classesContainer}>
             <input className={classes} {...restOfProps} onKeyDown={keyDownEnter} ref={refInput}/>
             <div className='absolute top-2.5 right-0 flex flex-row gap-2 mr-2'>
                 {iconOne && (

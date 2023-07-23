@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { memo } from 'react'
-import { Card } from '../../../../ui-element';
+import { Card, Input } from '../../../../ui-element';
 
 import './SystemCard.tailwind.css';
 
@@ -23,6 +23,7 @@ const SystemCard = ({
                 {/* TO DO: general Text component ui-element */}
                 <h3 className={classesTitle}>{title}</h3>
                 <p className={classesDescription}>{description}</p>
+                <Input className='mt-3' placeholder='Escribe un prompt' />
             </div>
         </Card>
     )

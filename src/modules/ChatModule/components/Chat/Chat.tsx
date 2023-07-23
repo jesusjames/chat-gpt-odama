@@ -1,6 +1,6 @@
 import { memo, useMemo } from 'react'
-import { Button, Card, CardContent, CardFooter, CardHeader } from '../../../../ui-element'
-import { PlusIcon } from '../../../../icons';
+import { Button, Card, CardContent, CardFooter, CardHeader, Input } from '../../../../ui-element'
+import { MagicIcon, PlusIcon } from '../../../../icons';
 
 type Props = {}
 
@@ -33,7 +33,9 @@ const Chat = (props: Props) => {
                     </Card>
                 </div>
             </CardContent>
-            <CardFooter>Footer</CardFooter>
+            <CardFooter>
+                <Input placeholder='Insertar Prompt' iconTwo={<MagicIcon />} />
+            </CardFooter>
         </Card>
     )
 }
