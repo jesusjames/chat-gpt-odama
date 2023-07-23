@@ -16,7 +16,7 @@ const Card = ({
     className,
     ...restOfProps
 }: CardProps) => {
-    const classesCard = classNames('w-full h-full flex flex-col rounded-lg bg-white relative p-[21px]' , {
+    const classesCard = classNames('w-full flex flex-col rounded-lg bg-white relative p-[21px]' , {
         'border': !noBorder,
         'shadow-[0_0_6px_0_rgba(46,58,90,0.09)]': !noShadow,
     }, className);

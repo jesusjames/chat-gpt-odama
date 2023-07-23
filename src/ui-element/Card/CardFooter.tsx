@@ -10,7 +10,7 @@ const CardFooter = ({
     className,
     ...restOfProps
 }: CardFooterProps) => {
-    const classes = classNames('relative mt-[21px] border-t mx-[-21px] px-[21px] pt-[21px]')
+    const classes = classNames('relative mt-[21px] border-t mx-[-21px] px-[21px] pt-[21px]', className)
     return (
         <div className={classes} {...restOfProps}>{children}</div>
     )
