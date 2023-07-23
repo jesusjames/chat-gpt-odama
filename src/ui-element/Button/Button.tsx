@@ -31,6 +31,7 @@ const Button = ({
   typeButton,
   active,
   size = 'normal',
+  className,
   ...restOfProps
 }: ButtonProps) => {
   const classesButton = classNames('button', {
@@ -40,7 +41,7 @@ const Button = ({
     [`button-size-${size}`]: size,
     'button-active': active,
     '!px-[10px]': icon && children === undefined
-  })
+  }, className)
 
   return (
     <button className={classesButton} type={typeButton} {...restOfProps}>

@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Button from './Button';
 import { ChevronLeft, SideBarIcon } from '../../icons';
+import { useState } from 'react';
 
 const meta: Meta<typeof Button> = {
   title: 'UI-element/Button',
@@ -47,12 +48,18 @@ export const Icon: Story = {
   },
 };
 
+const ButtonActiveTemplate = () => {
+  const [isActive, setIsActive] = useState(false);
+
+  const handleOnChange = () => {
+    setIsActive(prevIsActive => !prevIsActive);
+  };
+
+  return <Button outline color={'secondary'} icon={<SideBarIcon />} onClick={handleOnChange} active={isActive} />;
+};
+
 export const Active: Story = {
-  args: {
-    icon: <SideBarIcon />,
-    active: true,
-    size: 'large'
-  },
+  render: () => <ButtonActiveTemplate />
 };
 
 

@@ -1,0 +1,19 @@
+.card-header-title {
+    font-family: 'General Sans', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.card-header--color-primary {
+    color: #1E293B;
+}
+
+.card-header--color-secondary {
+    color: #10B981;
+}
+
+.card-header--color-tertiary {
+    color: #F97316;
+}

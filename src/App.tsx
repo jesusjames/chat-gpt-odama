@@ -1,6 +1,8 @@
+import { AppRouter } from "./router/AppRouter";
+
 function App() {
   return (
-    <h1>App chat gpt</h1>
+    <AppRouter />
   );
 }
 
