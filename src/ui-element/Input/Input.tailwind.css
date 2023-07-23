@@ -1,0 +1,30 @@
+.input {
+    @apply focus:outline-none focus:shadow-[0_0_5px_0_rgba(77,127,255,0.45)] focus:border-[1.5px] focus:border-[#4D7FFF];
+    display: flex;
+    font-family: 'General Sans', sans-serif;
+    width: 100%;
+    height: 40px;
+    padding: 10px 32px 10px 16px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    border: 1.5px solid var(--slate-300, #CBD5E1);
+    background: #FFF;
+    color: var(--slate-800, #1E293B);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 25px;
+}
+
+.input::placeholder {
+    color: #94A3B8;
+    font-family: 'General Sans', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 25px;
+}
