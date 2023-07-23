@@ -1,0 +1,18 @@
+.item-history-title {
+    color: #1E293B;
+    font-family: 'General Sans', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.item-history-time {
+    color: #94A3B8;
+    font-family: 'General Sans', sans-serif;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.26px;
+}

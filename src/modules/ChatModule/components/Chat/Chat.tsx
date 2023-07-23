@@ -2,9 +2,7 @@ import { memo, useMemo } from 'react'
 import { Button, Card, CardContent, CardFooter, CardHeader, Input } from '../../../../ui-element'
 import { MagicIcon, PlusIcon } from '../../../../icons';
 
-type Props = {}
-
-const Chat = (props: Props) => {
+const Chat = () => {
     const button = useMemo(() => {
         return(
             <Button icon={<PlusIcon />} >Nueva Búsqueda</Button>
