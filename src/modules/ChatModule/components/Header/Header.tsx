@@ -2,7 +2,7 @@ import { memo, useCallback } from 'react'
 import { Button } from '../../../../ui-element';
 import { ChevronLeft, Settings, SideBarIcon } from '../../../../icons';
 import { useMutationSideBarContext, useStateSideBarContext } from '../../contexts/SideBarContext';
-import { useNavigate } from 'react-router-dom';
+import { To, useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const { hiddenSidebarIsActive } = useStateSideBarContext();
@@ -14,10 +14,9 @@ const Header = () => {
     setHiddenSidebarIsActive(prevState => !prevState);
   }, [setHiddenSidebarIsActive]);
 
-  const handleBackPage = useCallback(() => {
-    navigate(-1);
-  }, [navigate]) 
-
+  const handleRedirect = useCallback((route: To) => {
+    navigate(route);
+  }, [navigate])
   return (
     <div className='h-[93px] w-full bg-[#F97316] shadow-md px-8 py-4'>
       <div className='flex flex-row justify-between w-full h-full items-center'>
@@ -27,7 +26,7 @@ const Header = () => {
             color='secondary' 
             icon={<ChevronLeft />} 
             size='large'
-            onClick={handleBackPage}
+            onClick={() => handleRedirect(-1 as To)}
           >
             Atrás
           </Button>
@@ -40,7 +39,7 @@ const Header = () => {
             onClick={handleClickHiddenSidebar}
           />
         </div>
-        <Button outline color='secondary' icon={<Settings />} size='large' />
+        <Button outline color='secondary' icon={<Settings />} size='large' onClick={() => handleRedirect('/config')} />
       </div>
     </div>
   )

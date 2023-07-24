@@ -12,17 +12,10 @@ interface AIResponseProps {
     createdUnix: number;
 }
 
-interface CodeProps {
-    node: Element;
-    inline: boolean;
-    className: string;
-    children: ReactNode;
-    [key: string]: any;
-}
-
 const components = {
     code: ({node, inline, className, children, ...props}: any) => {
-      const match = /language-(\w+)/.exec(className || '')
+      const match = /language-(\w+)/.exec(className || '');
+      console.log('match', match)
       return !inline && match
         ? <SyntaxHighlighter style={solarizedlight} language={match[1]} PreTag="div" children={String(children).replace(/\n$/, '')} {...props} />
         : <code className={className} {...props} />

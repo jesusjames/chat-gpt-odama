@@ -9,7 +9,7 @@ const Config = () => {
     const handleActionInput = useCallback((apiKey: string) => {
         if(apiKey.length > 0) {
             localStorage.setItem('apiKey', apiKey);
-            navigate('/chat');
+            navigate('/');
         }
     }, [navigate]);
 
