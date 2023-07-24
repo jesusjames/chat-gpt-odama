@@ -1,4 +1,4 @@
-import { ReactElement, ReactNode, memo } from 'react'
+import { ReactNode, memo } from 'react'
 import { Card, CardContent, CardHeader } from '../../../../ui-element';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { solarizedlight } from 'react-syntax-highlighter/dist/esm/styles/prism';
@@ -49,7 +49,7 @@ const AIResponse = ({ message = '', isLoading, createdUnix }: AIResponseProps) =
             </CardHeader>
             {!isLoading && (
                 <CardContent>
-                    <ReactMarkdown components={components} remarkPlugins={[gfm]} children={message} />
+                        <ReactMarkdown components={components} remarkPlugins={[gfm]} children={message} />
                 </CardContent>
             )}
         </Card>

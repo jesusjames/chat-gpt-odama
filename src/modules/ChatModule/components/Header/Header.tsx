@@ -2,14 +2,21 @@ import { memo, useCallback } from 'react'
 import { Button } from '../../../../ui-element';
 import { ChevronLeft, Settings, SideBarIcon } from '../../../../icons';
 import { useMutationSideBarContext, useStateSideBarContext } from '../../contexts/SideBarContext';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const { hiddenSidebarIsActive } = useStateSideBarContext();
   const { setHiddenSidebarIsActive } = useMutationSideBarContext();
 
+  const navigate = useNavigate();
+
   const handleClickHiddenSidebar = useCallback(() => {
     setHiddenSidebarIsActive(prevState => !prevState);
   }, [setHiddenSidebarIsActive]);
+
+  const handleBackPage = useCallback(() => {
+    navigate(-1);
+  }, [navigate]) 
 
   return (
     <div className='h-[93px] w-full bg-[#F97316] shadow-md px-8 py-4'>
@@ -20,6 +27,7 @@ const Header = () => {
             color='secondary' 
             icon={<ChevronLeft />} 
             size='large'
+            onClick={handleBackPage}
           >
             Atrás
           </Button>

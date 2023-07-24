@@ -6,7 +6,7 @@ export class ChatGptServices implements IChatGptServices {
     async getChatResponse({ message, system = '' }: GetChatResponseParams): Promise<CompletionResponse | string> {
         const endpoint = '/chat/completions';
         const data = {
-            model: "gpt-4",
+            model: "gpt-3.5-turbo",
             messages: [
                 {role: "system", content: system},
                 {role: "user", content: message}
@@ -21,24 +21,8 @@ export class ChatGptServices implements IChatGptServices {
 
             return response;
         } catch(error) {
-            console.error('Error getModels', error);
+            console.error('Error getChatResponse', error);
             return (error as Error).message;
-        }
-    }
-    
-    async getModels(): Promise<unknown> {
-        const endpoint = '/models';
-
-        try {
-            const response =  request(endpoint, {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                }
-            });
-            return response;
-        } catch(error) {
-            console.log('Error getModels', error);
         }
     }
 }

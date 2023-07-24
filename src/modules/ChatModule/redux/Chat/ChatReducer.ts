@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { fetchChatResponse } from "./ChatThunk";
 import moment from "moment";
+import { CompletionResponse } from "../../../../services/types";
 
 interface ChatHistory {
     id: string;
@@ -71,9 +72,13 @@ const { actions, reducer } = createSlice({
             state.idCounter += 1;
         })
         .addCase(fetchChatResponse.fulfilled, (state, action) => {
-            const message = (typeof action.payload === 'string') ? 
-                action.payload : 
-                action.payload.choices[0].message.content;
+            const { payload } = action;
+            let message: string = '';
+            if(typeof payload === 'string') {
+                message = payload;
+            }else if('choices' in payload) {
+                message = payload.choices[0].message.content;
+            }
 
             const created = (typeof action.payload === 'string') ? 
                 0 :
@@ -88,6 +93,7 @@ const { actions, reducer } = createSlice({
             return state;
         })
         .addCase(fetchChatResponse.rejected, (state, action) => {
+            console.log('error rejected', action);
             state.isLoading = false;
             state.error = action.payload as string;
         })

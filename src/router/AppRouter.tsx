@@ -9,7 +9,7 @@ export const AppRouter = (props: Props) => {
     <BrowserRouter>
         <Routes>
             {/* Chat module */}
-            <Route element={<ChatModuleRouter/>} path={`${PATHS.CHAT}/*`} />
+            <Route element={<ChatModuleRouter/>} path={`/*`} />
         </Routes>
     </BrowserRouter>
   )
