@@ -7,8 +7,8 @@ export const ChatModuleRouter = () => {
   return (
     <Routes>
         <Route element={<ChatLayout />} path={`${PATHS.CHAT}`}>
-            <Route index element={<Config />} />
-            <Route path='/chat' element={<Home />} />
+            <Route index element={<Home />} />
+            <Route path='/config' element={<Config />} />
         </Route>
     </Routes>
   )
